@@ -73,6 +73,13 @@ flutter:
         - asset: assets/fonts/Poppins-ExtraBold.ttf
         - asset: assets/fonts/Poppins-Black.ttf
 
+    - family: CatMeow
+      fonts:
+        - asset: assets/fonts/CatMeow.otf
+        - asset: assets/fonts/CatMeow-Doodle.otf
+        - asset: assets/fonts/CatMeow-Ear.otf
+        - asset: assets/fonts/CatMeow-FootPrint.otf
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

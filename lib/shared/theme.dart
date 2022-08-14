@@ -23,6 +23,11 @@ TextStyle whiteTextStyle = TextStyle(
   color: kWhiteColor,
 );
 
+TextStyle whiteMeowTextStyle = TextStyle(
+  fontFamily: 'CatMeow',
+  color: kWhiteColor,
+);
+
 TextStyle grayTextStyle = TextStyle(
   fontFamily: 'Poppins',
   color: kGrayColor,

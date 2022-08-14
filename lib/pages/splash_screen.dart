@@ -1,33 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:skripsi_ar_cat/shared/theme.dart';
+import 'dart:async';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    Timer(
+      const Duration(seconds: 3),
+      () {
+        Navigator.pushNamed(context, '/home-screen');
+      },
+    );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('SplashScreen'),
-      ),
-      body: Column(
-        children: [
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: 80,
-            decoration: BoxDecoration(
-              color: kWhiteColor,
-              boxShadow: [
-                BoxShadow(
-                  color: kBlackColor.withOpacity(0.1),
-                  blurRadius: 20,
-                  offset: const Offset(0, 0),
+      backgroundColor: kPrimaryColor,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 200,
+              height: 200,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    'assets/images/icon_scan.png',
+                  ),
                 ),
-              ],
-              borderRadius: BorderRadius.circular(25),
+              ),
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }
