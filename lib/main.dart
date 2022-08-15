@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:skripsi_ar_cat/pages/cat_detail_screen.dart';
+import 'package:skripsi_ar_cat/pages/cat_grooming_screen.dart';
+import 'package:skripsi_ar_cat/pages/cat_health_screen.dart';
+import 'package:skripsi_ar_cat/pages/cat_list_screen.dart';
+import 'package:skripsi_ar_cat/pages/cat_tips_screen.dart';
 import 'package:skripsi_ar_cat/pages/home_screen.dart';
+import 'package:skripsi_ar_cat/pages/scan_ar_screen.dart';
 import 'package:skripsi_ar_cat/pages/splash_screen.dart';
 
 void main() => runApp(const MyApp());
@@ -14,6 +20,12 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const SplashScreen(),
         '/home-screen': (context) => const HomeScreen(),
+        '/scan-ar': (context) => ScanARScreen(),
+        '/cat-list': (context) => const CatListScreen(),
+        '/cat-detail': (context) => const CatDetailScreen(),
+        '/cat-tips': (context) => const CatTipsScreen(),
+        '/cat-health': (context) => const CatHealthScreen(),
+        '/cat-grooming': (context) => const CatGroomingScreen(),
       },
     );
   }

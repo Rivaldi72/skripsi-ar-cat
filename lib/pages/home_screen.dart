@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:skripsi_ar_cat/shared/theme.dart';
-import 'package:skripsi_ar_cat/widgets/custom_cat_type_list_item.dart';
+import 'package:skripsi_ar_cat/widgets/custom_menu_list_item.dart';
 import 'package:skripsi_ar_cat/widgets/custom_navigation_item.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -37,13 +37,18 @@ class HomeScreen extends StatelessWidget {
                 isSelected: true,
                 title: 'Home',
               ),
-              Container(
-                width: 75,
-                height: 75,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      'assets/images/icon_scan.png',
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/scan-ar');
+                },
+                child: Container(
+                  width: 75,
+                  height: 75,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                        'assets/images/icon_scan.png',
+                      ),
                     ),
                   ),
                 ),
@@ -67,7 +72,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Container(
                     width: double.infinity,
-                    height: 150,
+                    height: 140,
                     decoration: BoxDecoration(
                       color: kWhiteColor,
                       boxShadow: [
@@ -110,34 +115,56 @@ class HomeScreen extends StatelessWidget {
               ),
               Expanded(
                 child: ListView(
-                  children: const [
-                    CustomCatTypeList(
+                  padding: const EdgeInsets.only(top: 20, bottom: 120),
+                  children: [
+                    CustomListMenuItem(
                       icon: 'assets/images/icon_cat_type.png',
                       title: 'Jenis-Jenis Kucing',
+                      action: () {
+                        Navigator.pushNamed(context, '/cat-list');
+                      },
                     ),
-                    CustomCatTypeList(
+                    CustomListMenuItem(
                       icon: 'assets/images/icon_cat_breeding.png',
                       title: 'Perkawinan Kucing',
+                      action: () {
+                        Navigator.pushNamed(context, '/cat-list');
+                      },
                     ),
-                    CustomCatTypeList(
+                    CustomListMenuItem(
                       icon: 'assets/images/icon_tips.png',
                       title: 'Tips Tentang Kucing',
+                      action: () {
+                        Navigator.pushNamed(context, '/cat-tips');
+                      },
                     ),
-                    CustomCatTypeList(
+                    CustomListMenuItem(
                       icon: 'assets/images/icon_cat_health.png',
                       title: 'Kesehatan\nKucing',
+                      action: () {
+                        Navigator.pushNamed(context, '/cat-health');
+                      },
                     ),
-                    CustomCatTypeList(
+                    CustomListMenuItem(
                       icon: 'assets/images/icon_cat_hygiene.png',
                       title: 'Kebersihan\nKucing',
+                      action: () {
+                        Navigator.pushNamed(context, '/cat-grooming');
+                      },
                     ),
-                    CustomCatTypeList(
+                    CustomListMenuItem(
                       icon: 'assets/images/icon_fun_fact.png',
                       title: 'Fakta Menarik Kucing',
+                      action: () {
+                        Navigator.pushNamed(context, '/cat-list');
+                      },
                     ),
-                    CustomCatTypeList(
+                    CustomListMenuItem(
                       icon: 'assets/images/icon_guideline.png',
                       title: 'Panduan Penggunaan',
+                      action: () {
+                        Navigator.pushNamed(context, '/cat-list');
+                      },
                     )
                   ],
                 ),
