@@ -110,18 +110,38 @@ class _ScanARScreenState extends State<ScanARScreen> {
             ),
           ),
           SafeArea(
-            child: Container(
-              width: double.infinity,
-              height: double.infinity,
-              margin: EdgeInsets.symmetric(
-                vertical: Platform.isAndroid ? 20 : 0,
-              ),
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/bg_scan_ar_copy.png'),
-                  fit: BoxFit.contain,
+            child: Column(
+              children: [
+                Container(
+                  width: double.infinity,
+                  height: 40,
+                  margin: EdgeInsets.symmetric(
+                    vertical: Platform.isAndroid ? 10 : 0,
+                    horizontal: Platform.isAndroid ? 20 : 0,
+                  ),
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/bg_scan_ar_top.png'),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
                 ),
-              ),
+                const Spacer(),
+                Container(
+                  width: double.infinity,
+                  height: 40,
+                  margin: EdgeInsets.symmetric(
+                    vertical: Platform.isAndroid ? 10 : 0,
+                    horizontal: Platform.isAndroid ? 20 : 0,
+                  ),
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/bg_scan_ar_bottom.png'),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           Column(
