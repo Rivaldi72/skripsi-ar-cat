@@ -43,6 +43,11 @@ TextStyle purpleTextStyle = TextStyle(
   color: kPrimaryColor,
 );
 
+TextStyle blueTextStyle = TextStyle(
+  fontFamily: 'Poppins',
+  color: kPrimaryColor,
+);
+
 FontWeight extraLight = FontWeight.w200;
 FontWeight light = FontWeight.w300;
 FontWeight regular = FontWeight.w400;

@@ -3,7 +3,7 @@ import 'package:skripsi_ar_cat/shared/theme.dart';
 import 'dart:io' show Platform;
 
 class ScanARScreen extends StatefulWidget {
-  ScanARScreen({
+  const ScanARScreen({
     Key? key,
   }) : super(key: key);
 
@@ -16,11 +16,6 @@ class _ScanARScreenState extends State<ScanARScreen> {
 
   void _turnOnFlashLight() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
       flashLightIsOn = !flashLightIsOn;
     });
   }
@@ -117,7 +112,7 @@ class _ScanARScreenState extends State<ScanARScreen> {
                   height: 40,
                   margin: EdgeInsets.symmetric(
                     vertical: Platform.isAndroid ? 10 : 0,
-                    horizontal: Platform.isAndroid ? 20 : 0,
+                    horizontal: 20,
                   ),
                   decoration: const BoxDecoration(
                     image: DecorationImage(
@@ -132,7 +127,7 @@ class _ScanARScreenState extends State<ScanARScreen> {
                   height: 40,
                   margin: EdgeInsets.symmetric(
                     vertical: Platform.isAndroid ? 10 : 0,
-                    horizontal: Platform.isAndroid ? 20 : 0,
+                    horizontal: 20,
                   ),
                   decoration: const BoxDecoration(
                     image: DecorationImage(

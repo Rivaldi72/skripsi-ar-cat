@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:skripsi_ar_cat/shared/theme.dart';
 import 'package:skripsi_ar_cat/widgets/custom_menu_list_item.dart';
 import 'package:skripsi_ar_cat/widgets/custom_navigation_item.dart';
+import 'dart:io' show Platform;
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -91,7 +92,9 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 50, left: 150),
+                    padding: Platform.isAndroid
+                        ? const EdgeInsets.only(top: 50, left: 150)
+                        : const EdgeInsets.only(top: 50, left: 165),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -119,21 +122,21 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     CustomListMenuItem(
                       icon: 'assets/images/icon_cat_type.png',
-                      title: 'Jenis-Jenis Kucing',
+                      title: 'Jenis-Jenis\nKucing',
                       action: () {
                         Navigator.pushNamed(context, '/cat-list');
                       },
                     ),
                     CustomListMenuItem(
                       icon: 'assets/images/icon_cat_breeding.png',
-                      title: 'Perkawinan Kucing',
+                      title: 'Perkawinan\nKucing',
                       action: () {
-                        Navigator.pushNamed(context, '/cat-list');
+                        Navigator.pushNamed(context, '/cat-breeding');
                       },
                     ),
                     CustomListMenuItem(
                       icon: 'assets/images/icon_tips.png',
-                      title: 'Tips Tentang Kucing',
+                      title: 'Tips Tentang\nKucing',
                       action: () {
                         Navigator.pushNamed(context, '/cat-tips');
                       },
@@ -154,14 +157,14 @@ class HomeScreen extends StatelessWidget {
                     ),
                     CustomListMenuItem(
                       icon: 'assets/images/icon_fun_fact.png',
-                      title: 'Fakta Menarik Kucing',
+                      title: 'Fakta Menarik\nKucing',
                       action: () {
-                        Navigator.pushNamed(context, '/cat-list');
+                        Navigator.pushNamed(context, '/cat-fun-fact');
                       },
                     ),
                     CustomListMenuItem(
                       icon: 'assets/images/icon_guideline.png',
-                      title: 'Panduan Penggunaan',
+                      title: 'Panduan\nPenggunaan',
                       action: () {
                         Navigator.pushNamed(context, '/cat-list');
                       },
