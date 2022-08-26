@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:skripsi_ar_cat/pages/cat_breeding_screen.dart';
+import 'package:skripsi_ar_cat/pages/cat_buying_screen.dart';
 import 'package:skripsi_ar_cat/pages/cat_detail_screen.dart';
 import 'package:skripsi_ar_cat/pages/cat_fun_fact.dart';
 import 'package:skripsi_ar_cat/pages/cat_grooming_screen.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         '/cat-breeding': (context) => const CatBreedingScreen(),
         '/cat-detail': (context) => const CatDetailScreen(),
         '/cat-tips': (context) => const CatTipsScreen(),
+        '/cat-buying': (context) => const CatBuyingScreen(),
         '/cat-health': (context) => const CatHealthScreen(),
         '/cat-grooming': (context) => const CatGroomingScreen(),
         '/cat-fun-fact': (context) => const CatFunFactScreen(),
