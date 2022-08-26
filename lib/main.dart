@@ -9,6 +9,7 @@ import 'package:skripsi_ar_cat/pages/cat_health_screen.dart';
 import 'package:skripsi_ar_cat/pages/cat_list_screen.dart';
 import 'package:skripsi_ar_cat/pages/cat_raising_screen.dart';
 import 'package:skripsi_ar_cat/pages/cat_tips_screen.dart';
+import 'package:skripsi_ar_cat/pages/guideline_screen.dart';
 import 'package:skripsi_ar_cat/pages/home_screen.dart';
 import 'package:skripsi_ar_cat/pages/scan_ar_screen.dart';
 import 'package:skripsi_ar_cat/pages/splash_screen.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         '/cat-health': (context) => const CatHealthScreen(),
         '/cat-grooming': (context) => const CatGroomingScreen(),
         '/cat-fun-fact': (context) => const CatFunFactScreen(),
+        '/guideline': (context) => const GuidelineScreen(),
       },
     );
   }

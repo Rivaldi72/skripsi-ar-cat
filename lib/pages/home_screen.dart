@@ -166,7 +166,7 @@ class HomeScreen extends StatelessWidget {
                       icon: 'assets/images/icon_guideline.png',
                       title: 'Panduan\nPenggunaan',
                       action: () {
-                        Navigator.pushNamed(context, '/cat-list');
+                        Navigator.pushNamed(context, '/guideline');
                       },
                     )
                   ],
