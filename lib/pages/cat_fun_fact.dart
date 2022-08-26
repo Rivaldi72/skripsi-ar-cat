@@ -108,7 +108,6 @@ class CatFunFactListItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       width: MediaQuery.of(context).size.width - 40,
-      height: 360,
       decoration: BoxDecoration(
         color: kWhiteColor,
         boxShadow: [
@@ -153,7 +152,7 @@ class CatFunFactListItem extends StatelessWidget {
           Text(
             desc,
             style: blackTextStyle.copyWith(fontSize: 18, height: 1.1),
-            maxLines: 5,
+            maxLines: 8,
             overflow: TextOverflow.ellipsis,
           ),
         ],

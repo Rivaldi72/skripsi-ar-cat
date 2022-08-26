@@ -28,14 +28,14 @@ class CatTipsScreen extends StatelessWidget {
             title: 'Memelihara\nKucing',
             image: 'assets/images/bg_pet_cat.png',
             action: () {
-              Navigator.pushNamed(context, '/cat-buying');
+              Navigator.pushNamed(context, '/cat-raising');
             },
           ),
           CustomTipsCardView(
             title: 'Merawat\nKucing',
             image: 'assets/images/bg_cat_care.png',
             action: () {
-              Navigator.pushNamed(context, '/cat-buying');
+              Navigator.pushNamed(context, '/cat-caring');
             },
           ),
         ],

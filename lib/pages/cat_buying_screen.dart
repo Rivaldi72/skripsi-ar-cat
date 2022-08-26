@@ -213,6 +213,31 @@ class CatBuyingScreen extends StatelessWidget {
                     content:
                         'Breeder. Breeder berbeda dengan dokter hewan. Breeder lebih kepada hobiis yang memang sangat tertarik dengan temuan baru hasil persilangan antar berbagai ras yang ada. Breeder memiliki pemahaman dan pengetahuan yang juga dapat diandalkan karena pengalaman nya dalam mengawinkan berbagai ras kucing. Breeder biasanya juga mengetahui tren ras kucing. Oleh karena itu, tidak ada salahnya mencari informasi melalui breeder.',
                   ),
+                  const SizedBox(height: 10),
+                  Text(
+                    '2. Mengunjungi Tempat Penjualan atau Breeder',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 20,
+                      fontWeight: bold,
+                      height: 1.2,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    'Berdasarkan data yang diperoleh, segera susun lokasi penjualan atau breeder yang harus didatangi pertama kali. Tujuannya agar masih ada kemungkinan didapatkan di tempat berikutnya jika yang dicari ternyata meleset di tempat pertama.',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 18,
+                    ),
+                    textAlign: TextAlign.justify,
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    'Ada baiknya jika membuat perjanjian terlebih dahulu sebelum datang. Maksudnya agar breeder menyiapkan semua kucingnya. Pembiak biasanya mempunyai stok kucing dalam berbagai umur, mulai dari anakan, remaja, hingga dewasa. Kondisi setiap kucing tersebut dapat dilihat secara langsung dann menyeluruh. Mintalah pendapat dan saran dari pembiak tentang kucing yang dimilikinya. Petunjuk dari pembiak sangat dibutuhkan untuk menjelaskan kualitas, baik itu kekurangan dan kelebihannya. Demikian pula asal-usul atau silsilahnya hingga beberapa keturunan, prestasi kontes, atau beberapa penyakit degeneratif yang bisa muncul.',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 18,
+                    ),
+                    textAlign: TextAlign.justify,
+                  ),
                 ],
               ),
             ],
