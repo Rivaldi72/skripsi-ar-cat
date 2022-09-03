@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:skripsi_ar_cat/shared/theme.dart';
 import 'package:skripsi_ar_cat/widgets/custom_app_bar.dart';
+import 'package:skripsi_ar_cat/widgets/custom_ordered_list.dart';
 
 class CatBuyingScreen extends StatelessWidget {
   const CatBuyingScreen({Key? key}) : super(key: key);
@@ -244,40 +245,6 @@ class CatBuyingScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class OrderedList extends StatelessWidget {
-  final String point, content;
-  const OrderedList({
-    Key? key,
-    required this.point,
-    required this.content,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          point,
-          style: blackTextStyle.copyWith(
-            fontSize: 15,
-          ),
-        ),
-        const SizedBox(width: 10),
-        Expanded(
-          child: Text(
-            content,
-            style: blackTextStyle.copyWith(
-              fontSize: 18,
-            ),
-            textAlign: TextAlign.justify,
-          ),
-        ),
-      ],
     );
   }
 }
