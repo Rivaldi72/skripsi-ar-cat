@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skripsi_ar_cat/pages/about_screen.dart';
 import 'package:skripsi_ar_cat/pages/cat_bathing_screen.dart';
 import 'package:skripsi_ar_cat/pages/cat_blood_type_screen.dart';
 import 'package:skripsi_ar_cat/pages/cat_breeding_screen.dart';
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
         '/cat-cutting-nails': (context) => const CatCuttingNailsScreen(),
         '/cat-fun-fact': (context) => const CatFunFactScreen(),
         '/guideline': (context) => const GuidelineScreen(),
+        '/about': (context) => const AboutScreen(),
       },
     );
   }

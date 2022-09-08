@@ -54,9 +54,14 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const CustomBottomNavigationItem(
-                icon: 'assets/images/icon_about.png',
-                title: 'About',
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/about');
+                },
+                child: const CustomBottomNavigationItem(
+                  icon: 'assets/images/icon_about.png',
+                  title: 'About',
+                ),
               ),
             ],
           ),

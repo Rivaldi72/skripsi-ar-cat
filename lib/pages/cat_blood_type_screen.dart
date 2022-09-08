@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:skripsi_ar_cat/shared/theme.dart';
 import 'package:skripsi_ar_cat/widgets/custom_app_bar.dart';
-import 'package:skripsi_ar_cat/widgets/custom_ordered_list.dart';
 
 class CatBloodTypeScreen extends StatelessWidget {
   const CatBloodTypeScreen({Key? key}) : super(key: key);
