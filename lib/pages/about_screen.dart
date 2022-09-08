@@ -97,6 +97,10 @@ class AboutScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(20),
                   height: 350,
                   decoration: BoxDecoration(
+                    image: const DecorationImage(
+                      image: AssetImage('assets/images/bg_profile.jpg'),
+                      fit: BoxFit.cover,
+                    ),
                     borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(40),
                       bottomRight: Radius.circular(40),
@@ -171,18 +175,18 @@ class AboutScreen extends StatelessWidget {
                       children: const [
                         SocialButton(
                           title: 'Github',
-                          icon: 'assets/images/icon_home.png',
+                          icon: 'assets/images/github2.png',
                           url: 'https://github.com/Rivaldi72',
                         ),
                         SocialButton(
-                          title: 'Linkedin',
-                          icon: 'assets/images/icon_home.png',
-                          url: 'https://www.linkedin.com/in/rivaldialiando7/',
+                          title: 'Gitlab',
+                          icon: 'assets/images/gitlab.png',
+                          url: 'https://gitlab.com/rivdew',
                         ),
                         SocialButton(
-                          title: 'Gitlab',
-                          icon: 'assets/images/icon_home.png',
-                          url: 'https://gitlab.com/rivdew',
+                          title: 'Linkedin',
+                          icon: 'assets/images/linkedin.png',
+                          url: 'https://www.linkedin.com/in/rivaldialiando7/',
                         ),
                       ],
                     ),
@@ -194,18 +198,18 @@ class AboutScreen extends StatelessWidget {
                       children: const [
                         SocialButton(
                           title: 'Instagram',
-                          icon: 'assets/images/icon_home.png',
+                          icon: 'assets/images/instagram.png',
                           url: 'https://www.instagram.com/rivaldialiando7/',
                         ),
                         SocialButton(
                           title: 'Phone',
-                          icon: 'assets/images/icon_home.png',
+                          icon: 'assets/images/phone.png',
                           url: 'tel:+6285658069092',
                         ),
                         SocialButton(
                           isWhatsApp: true,
                           title: 'Whatsapp',
-                          icon: 'assets/images/icon_home.png',
+                          icon: 'assets/images/whatsapp.png',
                           url:
                               'https://api.whatsapp.com/send/?phone=6285658069092',
                         ),
