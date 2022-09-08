@@ -1,7 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.skripsi_ar_cat">
-   <application
-        android:label="skripsi_ar_cat"
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera.ar" />
+
+    <application
+        android:label="AR Cat (Rivaldi Aliando)"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
