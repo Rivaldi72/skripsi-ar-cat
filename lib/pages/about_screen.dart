@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:skripsi_ar_cat/shared/theme.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({Key? key}) : super(key: key);
@@ -140,7 +141,7 @@ class AboutScreen extends StatelessWidget {
                       // const SizedBox(height: 10),
                       // const SizedBox(height: 10),
                       Text(
-                        'Fullstack Programmer',
+                        'Fullstack Developer',
                         style: secondaryBlackTextStyle.copyWith(
                           fontSize: 15,
                           fontWeight: bold,
@@ -169,19 +170,19 @@ class AboutScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: const [
                         SocialButton(
-                          title: 'Linkedin',
+                          title: 'Github',
                           icon: 'assets/images/icon_home.png',
-                          url: 'www.linkedin.com',
+                          url: 'https://github.com/Rivaldi72',
                         ),
                         SocialButton(
                           title: 'Linkedin',
                           icon: 'assets/images/icon_home.png',
-                          url: 'www.linkedin.com',
+                          url: 'https://www.linkedin.com/in/rivaldialiando7/',
                         ),
                         SocialButton(
-                          title: 'Linkedin',
+                          title: 'Gitlab',
                           icon: 'assets/images/icon_home.png',
-                          url: 'www.linkedin.com',
+                          url: 'https://gitlab.com/rivdew',
                         ),
                       ],
                     ),
@@ -192,19 +193,21 @@ class AboutScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: const [
                         SocialButton(
-                          title: 'Linkedin',
+                          title: 'Instagram',
                           icon: 'assets/images/icon_home.png',
-                          url: 'www.linkedin.com',
+                          url: 'https://www.instagram.com/rivaldialiando7/',
                         ),
                         SocialButton(
-                          title: 'Linkedin',
+                          title: 'Phone',
                           icon: 'assets/images/icon_home.png',
-                          url: 'www.linkedin.com',
+                          url: 'tel:+6285658069092',
                         ),
                         SocialButton(
-                          title: 'Linkedin',
+                          isWhatsApp: true,
+                          title: 'Whatsapp',
                           icon: 'assets/images/icon_home.png',
-                          url: 'www.linkedin.com',
+                          url:
+                              'https://api.whatsapp.com/send/?phone=6285658069092',
                         ),
                       ],
                     ),
@@ -221,17 +224,42 @@ class AboutScreen extends StatelessWidget {
 
 class SocialButton extends StatelessWidget {
   final String title, icon, url;
+  final bool isWhatsApp;
   const SocialButton({
     Key? key,
     required this.title,
     required this.icon,
     required this.url,
+    this.isWhatsApp = false,
   }) : super(key: key);
+
+  Future<void> _launchUrl(url) async {
+    if (!await launchUrl(url)) {
+      throw 'Could not launch $url';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    _launchWhatsapp() async {
+      var whatsapp = "+85658069092";
+      var whatsappAndroid =
+          Uri.parse("whatsapp://send?phone=$whatsapp&text=hello");
+      if (await canLaunchUrl(whatsappAndroid)) {
+        await launchUrl(whatsappAndroid);
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("WhatsApp is not installed on the device"),
+          ),
+        );
+      }
+    }
+
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        isWhatsApp ? _launchWhatsapp() : _launchUrl(Uri.parse(url));
+      },
       child: Column(
         children: [
           Image.asset(
