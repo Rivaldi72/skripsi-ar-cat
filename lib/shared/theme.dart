@@ -5,6 +5,8 @@ double defaultRadius = 20.0;
 
 Color kPrimaryColor = const Color(0xff1995F2);
 Color kBlackColor = const Color(0xff000000);
+Color kSecondaryBlackColor = const Color(0x66000000);
+Color kSecondaryWhiteColor = const Color(0x77FFFFFF);
 Color kWhiteColor = const Color(0xffFFFFFF);
 Color kGrayColor = const Color(0xffF0F0F0);
 Color kPinkColor = const Color(0xffFC60C5);
@@ -21,6 +23,16 @@ TextStyle blackTextStyle = TextStyle(
 TextStyle whiteTextStyle = TextStyle(
   fontFamily: 'Poppins',
   color: kWhiteColor,
+);
+
+TextStyle secondaryBlackTextStyle = TextStyle(
+  fontFamily: 'Poppins',
+  color: kSecondaryBlackColor,
+);
+
+TextStyle secondaryWhiteTextStyle = TextStyle(
+  fontFamily: 'Poppins',
+  color: kSecondaryWhiteColor,
 );
 
 TextStyle whiteMeowTextStyle = TextStyle(
