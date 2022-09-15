@@ -98,7 +98,7 @@ class CatDetailScreen extends StatelessWidget {
             CustomTableCharacteristic(
               title: 'Kepala',
               value: Text(
-                '- TestetsetsTestetsetsTestetsetsTestetsetsTestetsets',
+                '- TestetsetsTestetsetsTestetsetsTestetsetsTestetsets\n- TestetsetsTestetsetsTestetsetsTestetsetsTestetsets\n- TestetsetsTestetsetsTestetsetsTestetsetsTestetsets',
                 style: blackTextStyle.copyWith(fontSize: 17),
               ),
             ),
