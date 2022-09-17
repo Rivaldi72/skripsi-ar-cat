@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:skripsi_ar_cat/shared/theme.dart';
 
 class CustomCatTypeListItem extends StatelessWidget {
-  final String? image, name, about;
+  final String? image, name, type;
   final Function()? action;
 
   const CustomCatTypeListItem({
     Key? key,
     this.image,
     this.name,
-    this.about,
+    this.type,
     this.action,
   }) : super(key: key);
 
@@ -66,7 +66,7 @@ class CustomCatTypeListItem extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(right: 25.0),
                     child: Text(
-                      about ?? 'Tidak ada about',
+                      type ?? 'Tidak ada type',
                       style: blackTextStyle.copyWith(
                         fontSize: 15,
                         height: 1,

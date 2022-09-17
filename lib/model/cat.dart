@@ -1,6 +1,8 @@
 const String tableCat = 'cats';
 
 class CatFields {
+  static final List<String> values = [id, name, type];
+
   static const String id = '_id';
   static const String name = 'name';
   static const String type = 'type';
@@ -27,6 +29,20 @@ class Cat {
         name: name ?? this.name,
         type: type ?? this.type,
       );
+
+  static Cat fromJson(Map<String, Object?> json) => Cat(
+        id: json[CatFields.name] as int?,
+        name: json[CatFields.name] as String,
+        type: json[CatFields.type] as String,
+      );
+
+  // factory Cat.fromJson(Map<String, dynamic> json) {
+  //   return Cat(
+  //     id: json[CatFields.name],
+  //     name: json[CatFields.name],
+  //     type: json[CatFields.type],
+  //   );
+  // }
 
   Map<String, Object?> toJson() => {
         CatFields.id: id,

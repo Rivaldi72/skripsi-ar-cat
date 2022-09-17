@@ -41,6 +41,33 @@ class CatBody {
     required this.tail,
   });
 
+  CatBody copy({
+    int? id,
+    int? catId,
+    String? size,
+    String? head,
+    String? nose,
+    String? ear,
+    String? eye,
+    String? body,
+    String? nail,
+    String? fur,
+    String? tail,
+  }) =>
+      CatBody(
+        id: id ?? this.id,
+        catId: catId ?? this.catId,
+        size: size ?? this.size,
+        head: head ?? this.head,
+        nose: nose ?? this.nose,
+        ear: ear ?? this.ear,
+        eye: eye ?? this.eye,
+        body: body ?? this.body,
+        nail: nail ?? this.nail,
+        fur: fur ?? this.fur,
+        tail: tail ?? this.tail,
+      );
+
   Map<String, Object?> toJson() => {
         CatBodyFields.id: id,
         CatBodyFields.catId: catId,

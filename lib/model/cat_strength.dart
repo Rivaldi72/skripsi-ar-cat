@@ -17,6 +17,17 @@ class CatStrength {
     required this.strength,
   });
 
+  CatStrength copy({
+    int? id,
+    int? catId,
+    String? strength,
+  }) =>
+      CatStrength(
+        id: id ?? this.id,
+        catId: catId ?? this.catId,
+        strength: strength ?? this.strength,
+      );
+
   Map<String, Object?> toJson() => {
         CatStrengthFields.id: id,
         CatStrengthFields.catId: catId,
