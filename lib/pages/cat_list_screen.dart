@@ -25,7 +25,6 @@ class _CatListScreenState extends State<CatListScreen> {
         body: FutureBuilder<List<Cat>>(
           future: CatDatabase.instance.readAllCat(),
           builder: (context, snapshot) {
-            print(snapshot.data);
             if (snapshot.hasData) {
               if (snapshot.data!.isEmpty) {
                 return Center(
@@ -36,9 +35,9 @@ class _CatListScreenState extends State<CatListScreen> {
                   ),
                 );
               }
-              print(snapshot.data);
               return ListView.builder(
                 itemCount: snapshot.data!.length,
+                padding: const EdgeInsets.only(top: 20, bottom: 20),
                 itemBuilder: (context, index) {
                   final cat = snapshot.data![index];
                   return CustomCatTypeListItem(
