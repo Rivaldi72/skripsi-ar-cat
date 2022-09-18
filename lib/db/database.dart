@@ -321,20 +321,62 @@ class CatDatabase {
         '''INSERT INTO "$tableCatWeakness" ("${CatWeaknessFields.id}", "${CatWeaknessFields.catId}", "${CatWeaknessFields.weakness}") VALUES ('18', '10', 'Sangat baik jika kebebasannya dibatasi karena sering dijadikan mangsa oleh kucing pencuri');''');
   }
 
-  Future<Cat> readCat(int id) async {
+  Future readDetailCat(int id) async {
     final db = await instance.database;
-    final maps = await db.query(
+
+    final cat = await db.query(
       tableCat,
       columns: CatFields.values,
       where: '${CatFields.id} = ?',
       whereArgs: [id],
     );
+    List<Cat> resultCat = cat.map((json) => Cat.fromJson(json)).toList();
 
-    if (maps.isNotEmpty) {
-      return Cat.fromJson(maps.first);
-    } else {
-      throw Exception('ID $id not found');
-    }
+    final catDetail = await db.query(
+      tableCatDetail,
+      columns: CatDetailFields.values,
+      where: '${CatDetailFields.catId} = ?',
+      whereArgs: [id],
+    );
+    List<CatDetail> resultCatDetail =
+        catDetail.map((json) => CatDetail.fromJson(json)).toList();
+
+    final catBody = await db.query(
+      tableCatBody,
+      columns: CatBodyFields.values,
+      where: '${CatBodyFields.catId} = ?',
+      whereArgs: [id],
+    );
+    List<CatBody> resultCatBody =
+        catBody.map((json) => CatBody.fromJson(json)).toList();
+
+    final catStrength = await db.query(
+      tableCatStrength,
+      columns: CatStrengthFields.values,
+      where: '${CatStrengthFields.catId} = ?',
+      whereArgs: [id],
+    );
+    List<CatStrength> resultCatStrength =
+        catStrength.map((json) => CatStrength.fromJson(json)).toList();
+
+    final catWeakness = await db.query(
+      tableCatWeakness,
+      columns: CatWeaknessFields.values,
+      where: '${CatWeaknessFields.catId} = ?',
+      whereArgs: [id],
+    );
+    List<CatWeakness> resultCatWeakness =
+        catWeakness.map((json) => CatWeakness.fromJson(json)).toList();
+
+    var result = {
+      'cat': resultCat,
+      'detail': resultCatDetail,
+      'body': resultCatBody,
+      'strength': resultCatStrength,
+      'weakness': resultCatWeakness
+    };
+
+    return result;
   }
 
   Future<List<Cat>> readAllCat() async {

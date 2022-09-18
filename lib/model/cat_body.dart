@@ -1,6 +1,20 @@
 const String tableCatBody = 'cat_body';
 
 class CatBodyFields {
+  static final List<String> values = [
+    id,
+    catId,
+    size,
+    head,
+    nose,
+    ear,
+    eye,
+    body,
+    nail,
+    fur,
+    tail
+  ];
+
   static const String id = '_id';
   static const String catId = 'cat_id';
   static const String size = 'size';
@@ -41,32 +55,21 @@ class CatBody {
     required this.tail,
   });
 
-  CatBody copy({
-    int? id,
-    int? catId,
-    String? size,
-    String? head,
-    String? nose,
-    String? ear,
-    String? eye,
-    String? body,
-    String? nail,
-    String? fur,
-    String? tail,
-  }) =>
-      CatBody(
-        id: id ?? this.id,
-        catId: catId ?? this.catId,
-        size: size ?? this.size,
-        head: head ?? this.head,
-        nose: nose ?? this.nose,
-        ear: ear ?? this.ear,
-        eye: eye ?? this.eye,
-        body: body ?? this.body,
-        nail: nail ?? this.nail,
-        fur: fur ?? this.fur,
-        tail: tail ?? this.tail,
-      );
+  factory CatBody.fromJson(Map<String, dynamic> json) {
+    return CatBody(
+      id: json[CatBodyFields.id],
+      catId: json[CatBodyFields.catId],
+      size: json[CatBodyFields.size],
+      head: json[CatBodyFields.head],
+      nose: json[CatBodyFields.nose],
+      ear: json[CatBodyFields.ear],
+      eye: json[CatBodyFields.eye],
+      body: json[CatBodyFields.body],
+      nail: json[CatBodyFields.nail],
+      fur: json[CatBodyFields.fur],
+      tail: json[CatBodyFields.tail],
+    );
+  }
 
   Map<String, Object?> toJson() => {
         CatBodyFields.id: id,

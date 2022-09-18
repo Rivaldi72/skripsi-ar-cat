@@ -1,6 +1,8 @@
 const String tableCatDetail = 'cat_detail';
 
 class CatDetailFields {
+  static final List<String> values = [id, catId, about, description];
+
   static const String id = '_id';
   static const String catId = 'cat_id';
   static const String about = 'about';
@@ -20,18 +22,14 @@ class CatDetail {
     required this.description,
   });
 
-  CatDetail copy({
-    int? id,
-    int? catId,
-    String? about,
-    String? description,
-  }) =>
-      CatDetail(
-        id: id ?? this.id,
-        catId: catId ?? this.catId,
-        about: about ?? this.about,
-        description: description ?? this.description,
-      );
+  factory CatDetail.fromJson(Map<String, dynamic> json) {
+    return CatDetail(
+      id: json[CatDetailFields.id],
+      catId: json[CatDetailFields.catId],
+      about: json[CatDetailFields.about],
+      description: json[CatDetailFields.description],
+    );
+  }
 
   Map<String, Object?> toJson() => {
         CatDetailFields.id: id,

@@ -45,7 +45,8 @@ class _CatListScreenState extends State<CatListScreen> {
                     name: cat.name,
                     type: cat.type,
                     action: () {
-                      Navigator.pushNamed(context, '/cat-detail');
+                      Navigator.pushNamed(context, '/cat-detail',
+                          arguments: {'catID': cat.id});
                     },
                   );
                 },
