@@ -19,8 +19,17 @@ import 'package:skripsi_ar_cat/pages/guideline_screen.dart';
 import 'package:skripsi_ar_cat/pages/home_screen.dart';
 import 'package:skripsi_ar_cat/pages/scan_ar_screen.dart';
 import 'package:skripsi_ar_cat/pages/splash_screen.dart';
+import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart'
+    show ArCoreController;
 
-void main() => runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  print('ARCORE IS AVAILABLE?');
+  print(await ArCoreController.checkArCoreAvailability());
+  print('\nAR SERVICES INSTALLED?');
+  print(await ArCoreController.checkIsArCoreInstalled());
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

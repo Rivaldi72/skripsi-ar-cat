@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:skripsi_ar_cat/shared/theme.dart';
 import 'dart:io' show Platform;
+import 'dart:typed_data';
+
+import 'package:flutter/services.dart';
+import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
+import 'package:vector_math/vector_math_64.dart';
 
 class ScanARScreen extends StatefulWidget {
   const ScanARScreen({
@@ -13,6 +18,9 @@ class ScanARScreen extends StatefulWidget {
 
 class _ScanARScreenState extends State<ScanARScreen> {
   bool flashLightIsOn = false;
+  ArCoreController? arCoreController;
+  Map<String, ArCoreAugmentedImage> augmentedImagesMap = Map();
+  Map<String, Uint8List> bytesMap = Map();
 
   void _turnOnFlashLight() {
     setState(() {
@@ -90,6 +98,65 @@ class _ScanARScreenState extends State<ScanARScreen> {
       );
     }
 
+    Future _addSphere(ArCoreAugmentedImage augmentedImage) async {
+      final ByteData textureBytes =
+          await rootBundle.load('assets/images/earth.jpg');
+
+      final material = ArCoreMaterial(
+        color: Color.fromARGB(120, 66, 134, 244),
+        textureBytes: textureBytes.buffer.asUint8List(),
+      );
+      final sphere = ArCoreSphere(
+        materials: [material],
+        radius: augmentedImage.extentX / 2,
+      );
+      final node = ArCoreNode(
+        shape: sphere,
+      );
+      arCoreController?.addArCoreNodeToAugmentedImage(
+          node, augmentedImage.index);
+    }
+
+    _handleOnTrackingImage(ArCoreAugmentedImage augmentedImage) {
+      if (!augmentedImagesMap.containsKey(augmentedImage.name)) {
+        // print("${augmentedImagesMap.containsKey(augmentedImage.name)} ini dia");
+        // print("${augmentedImage.name} ini dia");
+        // print("${augmentedImage.index} ini dia");
+        print("${augmentedImagesMap.isEmpty} ini dia");
+        print("$augmentedImagesMap ini dia");
+        // if (augmentedImagesMap.isNotEmpty) {
+        //   augmentedImagesMap.forEach((key, value) {
+        //     print('${value.name} ini dia');
+        //     print('${value.index} ini dia');
+        //     arCoreController?.removeNodeWithIndex(value.index);
+        //   });
+        // }
+
+        augmentedImagesMap[augmentedImage.name] = augmentedImage;
+        print("${augmentedImagesMap[augmentedImage.name]?.name} ini dia");
+        switch (augmentedImage.name) {
+          case "earth_augmented_image":
+            _addSphere(augmentedImage);
+            print('${augmentedImage.name} ini dia');
+            break;
+        }
+      }
+    }
+
+    loadMultipleImage() async {
+      final ByteData bytes1 =
+          await rootBundle.load('assets/images/earth_augmented_image.jpg');
+      bytesMap["earth_augmented_image"] = bytes1.buffer.asUint8List();
+
+      arCoreController?.loadMultipleAugmentedImage(bytesMap: bytesMap);
+    }
+
+    void _onArCoreViewCreated(ArCoreController controller) async {
+      arCoreController = controller;
+      arCoreController?.onTrackingImage = _handleOnTrackingImage;
+      loadMultipleImage();
+    }
+
     return Scaffold(
       body: Stack(
         children: [
@@ -102,6 +169,10 @@ class _ScanARScreenState extends State<ScanARScreen> {
                 image: AssetImage('assets/images/bg_test.jpeg'),
                 fit: BoxFit.cover,
               ),
+            ),
+            child: ArCoreView(
+              onArCoreViewCreated: _onArCoreViewCreated,
+              type: ArCoreViewType.AUGMENTEDIMAGES,
             ),
           ),
           SafeArea(
