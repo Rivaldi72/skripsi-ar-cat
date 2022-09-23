@@ -1,3 +1,4 @@
+import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
 import 'package:skripsi_ar_cat/pages/about_screen.dart';
 import 'package:skripsi_ar_cat/pages/cat_bathing_screen.dart';
@@ -23,11 +24,15 @@ import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart'
     show ArCoreController;
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  print('ARCORE IS AVAILABLE?');
-  print(await ArCoreController.checkArCoreAvailability());
-  print('\nAR SERVICES INSTALLED?');
-  print(await ArCoreController.checkIsArCoreInstalled());
+  if (Platform.isAndroid) {
+    WidgetsFlutterBinding.ensureInitialized();
+    print('ARCORE IS AVAILABLE?');
+    print(await ArCoreController.checkArCoreAvailability());
+    print('\nAR SERVICES INSTALLED?');
+    print(await ArCoreController.checkIsArCoreInstalled());
+  } else if (Platform.isIOS) {
+    // iOS-specific code
+  }
   runApp(MyApp());
 }
 

@@ -117,6 +117,16 @@ class _ScanARScreenState extends State<ScanARScreen> {
           node, augmentedImage.index);
     }
 
+    Future _addCat(ArCoreAugmentedImage augmentedImage, String catName,
+        String urlObject) async {
+      final catNode = ArCoreReferenceNode(
+        name: catName,
+        objectUrl: urlObject,
+      );
+      arCoreController?.addArCoreNodeToAugmentedImage(
+          catNode, augmentedImage.index);
+    }
+
     _handleOnTrackingImage(ArCoreAugmentedImage augmentedImage) {
       if (!augmentedImagesMap.containsKey(augmentedImage.name)) {
         // print("${augmentedImagesMap.containsKey(augmentedImage.name)} ini dia");
@@ -137,7 +147,46 @@ class _ScanARScreenState extends State<ScanARScreen> {
         switch (augmentedImage.name) {
           case "earth_augmented_image":
             _addSphere(augmentedImage);
-            print('${augmentedImage.name} ini dia');
+            break;
+          case "kucing1":
+            _addCat(augmentedImage, 'Abyssinian',
+                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/AbyssinianCat.glb");
+            break;
+          case "kucing2":
+            _addCat(augmentedImage, 'American Shorthair',
+                "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF/Duck.gltf");
+            break;
+          case "kucing3":
+            _addCat(augmentedImage, 'American Wirehair',
+                "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF/Duck.gltf");
+            break;
+          case "kucing4":
+            _addCat(augmentedImage, 'Angora',
+                "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF/Duck.gltf");
+            break;
+          case "kucing5":
+            _addCat(augmentedImage, 'Balinese',
+                "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF/Duck.gltf");
+            break;
+          case "kucing6":
+            _addCat(augmentedImage, 'Birman',
+                "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF/Duck.gltf");
+            break;
+          case "kucing7":
+            _addCat(augmentedImage, 'Burmese',
+                "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF/Duck.gltf");
+            break;
+          case "kucing8":
+            _addCat(augmentedImage, 'Colourpoint (Himalayan)',
+                "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF/Duck.gltf");
+            break;
+          case "kucing9":
+            _addCat(augmentedImage, 'Cymric (Longhaired Manx)',
+                "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF/Duck.gltf");
+            break;
+          case "kucing10":
+            _addCat(augmentedImage, 'Egyptian Mau',
+                "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF/Duck.gltf");
             break;
         }
       }
@@ -146,7 +195,28 @@ class _ScanARScreenState extends State<ScanARScreen> {
     loadMultipleImage() async {
       final ByteData bytes1 =
           await rootBundle.load('assets/images/earth_augmented_image.jpg');
+      final ByteData kucing1 = await rootBundle.load('assets/markers/1.jpg');
+      final ByteData kucing2 = await rootBundle.load('assets/markers/2.jpg');
+      final ByteData kucing3 = await rootBundle.load('assets/markers/3.jpg');
+      final ByteData kucing4 = await rootBundle.load('assets/markers/4.jpg');
+      final ByteData kucing5 = await rootBundle.load('assets/markers/5.jpg');
+      final ByteData kucing6 = await rootBundle.load('assets/markers/6.jpg');
+      final ByteData kucing7 = await rootBundle.load('assets/markers/7.jpg');
+      final ByteData kucing8 = await rootBundle.load('assets/markers/8.jpg');
+      final ByteData kucing9 = await rootBundle.load('assets/markers/9.jpg');
+      final ByteData kucing10 = await rootBundle.load('assets/markers/10.jpg');
+
       bytesMap["earth_augmented_image"] = bytes1.buffer.asUint8List();
+      bytesMap["kucing1"] = kucing1.buffer.asUint8List();
+      bytesMap["kucing2"] = kucing2.buffer.asUint8List();
+      bytesMap["kucing3"] = kucing3.buffer.asUint8List();
+      bytesMap["kucing4"] = kucing4.buffer.asUint8List();
+      bytesMap["kucing5"] = kucing5.buffer.asUint8List();
+      bytesMap["kucing6"] = kucing6.buffer.asUint8List();
+      bytesMap["kucing7"] = kucing7.buffer.asUint8List();
+      bytesMap["kucing8"] = kucing8.buffer.asUint8List();
+      bytesMap["kucing9"] = kucing9.buffer.asUint8List();
+      bytesMap["kucing10"] = kucing10.buffer.asUint8List();
 
       arCoreController?.loadMultipleAugmentedImage(bytesMap: bytesMap);
     }
