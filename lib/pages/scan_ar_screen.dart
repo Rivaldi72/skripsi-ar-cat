@@ -122,6 +122,7 @@ class _ScanARScreenState extends State<ScanARScreen> {
       final catNode = ArCoreReferenceNode(
         name: catName,
         objectUrl: urlObject,
+        scale: Vector3(0.03, 0.03, 0.03),
       );
       arCoreController?.addArCoreNodeToAugmentedImage(
           catNode, augmentedImage.index);
@@ -154,39 +155,39 @@ class _ScanARScreenState extends State<ScanARScreen> {
             break;
           case "kucing2":
             _addCat(augmentedImage, 'American Shorthair',
-                "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF/Duck.gltf");
+                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/AmericanShorthair.glb");
             break;
           case "kucing3":
             _addCat(augmentedImage, 'American Wirehair',
-                "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF/Duck.gltf");
+                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/AmericanWirehair.glb");
             break;
           case "kucing4":
             _addCat(augmentedImage, 'Angora',
-                "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF/Duck.gltf");
+                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/Angora.glb");
             break;
           case "kucing5":
             _addCat(augmentedImage, 'Balinese',
-                "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF/Duck.gltf");
+                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/Balinese.glb");
             break;
           case "kucing6":
             _addCat(augmentedImage, 'Birman',
-                "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF/Duck.gltf");
+                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/Birman.glb");
             break;
           case "kucing7":
             _addCat(augmentedImage, 'Burmese',
-                "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF/Duck.gltf");
+                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/Burmese.glb");
             break;
           case "kucing8":
             _addCat(augmentedImage, 'Colourpoint (Himalayan)',
-                "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF/Duck.gltf");
+                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/Colourpoint(Himalayan).glb");
             break;
           case "kucing9":
             _addCat(augmentedImage, 'Cymric (Longhaired Manx)',
-                "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF/Duck.gltf");
+                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/Cymric(LonghairedManx).glb");
             break;
           case "kucing10":
             _addCat(augmentedImage, 'Egyptian Mau',
-                "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF/Duck.gltf");
+                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/EgyptianMau.glb");
             break;
         }
       }
