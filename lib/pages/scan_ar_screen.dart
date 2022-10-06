@@ -152,45 +152,45 @@ class _ScanARScreenState extends State<ScanARScreen> {
             break;
           case "kucing1":
             _addCat(augmentedImage, 'Abyssinian',
-                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/AbyssinianCat/AbyssinianCat.gltf");
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/final/AbyssinianCat/AbyssinianCat.gltf");
             break;
           case "kucing2":
             _addCat(augmentedImage, 'American Shorthair',
-                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/AmericanShorthair/AmericanShorthair.gltf");
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/final/AmericanShorthair/AmericanShorthair.gltf");
             break;
           case "kucing3":
             _addCat(augmentedImage, 'American Wirehair',
-                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/AmericanWirehair/AmericanWirehair.gltf",
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/final/AmericanWirehair/AmericanWirehair.gltf",
                 scale: 0.005);
             break;
           case "kucing4":
             _addCat(augmentedImage, 'Angora',
-                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/Angora/Angora.gltf");
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/final/Angora/Angora.gltf");
             break;
           case "kucing5":
             _addCat(augmentedImage, 'Balinese',
-                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/Balinese.gltf");
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/final/Balinese.gltf");
             break;
           case "kucing6":
             _addCat(augmentedImage, 'Birman',
-                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/Birman/Birman.gltf");
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/final/Birman/Birman.gltf");
             break;
           case "kucing7":
             _addCat(augmentedImage, 'Burmese',
-                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/Burmese/Burmese.gltf",
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/final/Burmese/Burmese.gltf",
                 scale: 0.008);
             break;
           case "kucing8":
             _addCat(augmentedImage, 'Colourpoint (Himalayan)',
-                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/Colourpoint(Himalayan)/Colourpoint(Himalayan).gltf");
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/final/Colourpoint(Himalayan)/Colourpoint(Himalayan).gltf");
             break;
           case "kucing9":
             _addCat(augmentedImage, 'Cymric (Longhaired Manx)',
-                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/Cymric(LonghairedManx)/Cymric(LonghairedManx).gltf");
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/final/Cymric(LonghairedManx)/Cymric(LonghairedManx).gltf");
             break;
           case "kucing10":
             _addCat(augmentedImage, 'Egyptian Mau',
-                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/EgyptianMau/EgyptianMau.gltf");
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/final/EgyptianMau/EgyptianMau.gltf");
             break;
         }
       }
