@@ -117,12 +117,13 @@ class _ScanARScreenState extends State<ScanARScreen> {
           node, augmentedImage.index);
     }
 
-    Future _addCat(ArCoreAugmentedImage augmentedImage, String catName,
-        String urlObject) async {
+    Future _addCat(
+        ArCoreAugmentedImage augmentedImage, String catName, String urlObject,
+        {double scale = 0.03}) async {
       final catNode = ArCoreReferenceNode(
         name: catName,
         objectUrl: urlObject,
-        scale: Vector3(0.03, 0.03, 0.03),
+        scale: Vector3(scale, scale, scale),
       );
       arCoreController?.addArCoreNodeToAugmentedImage(
           catNode, augmentedImage.index);
@@ -151,43 +152,45 @@ class _ScanARScreenState extends State<ScanARScreen> {
             break;
           case "kucing1":
             _addCat(augmentedImage, 'Abyssinian',
-                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/AbyssinianCat.glb");
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/AbyssinianCat.glb");
             break;
           case "kucing2":
             _addCat(augmentedImage, 'American Shorthair',
-                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/AmericanShorthair.glb");
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/AmericanShorthair.glb");
             break;
           case "kucing3":
             _addCat(augmentedImage, 'American Wirehair',
-                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/AmericanWirehair.glb");
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/AmericanWirehair.glb",
+                scale: 0.005);
             break;
           case "kucing4":
             _addCat(augmentedImage, 'Angora',
-                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/Angora.glb");
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/Angora.glb");
             break;
           case "kucing5":
             _addCat(augmentedImage, 'Balinese',
-                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/Balinese.glb");
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/Balinese.glb");
             break;
           case "kucing6":
             _addCat(augmentedImage, 'Birman',
-                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/Birman.glb");
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/Birman.glb");
             break;
           case "kucing7":
             _addCat(augmentedImage, 'Burmese',
-                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/Burmese.glb");
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/BURMES.glb",
+                scale: 0.008);
             break;
           case "kucing8":
             _addCat(augmentedImage, 'Colourpoint (Himalayan)',
-                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/Colourpoint(Himalayan).glb");
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/Colourpoint(Himalayan).glb");
             break;
           case "kucing9":
             _addCat(augmentedImage, 'Cymric (Longhaired Manx)',
-                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/Cymric(LonghairedManx).glb");
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/Cymric(LonghairedManx).glb");
             break;
           case "kucing10":
             _addCat(augmentedImage, 'Egyptian Mau',
-                "https://github.com/Rivaldi72/skripsi-ar-object/raw/master/EgyptianMau.glb");
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/EgyptianMau.glb");
             break;
         }
       }

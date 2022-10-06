@@ -42,7 +42,7 @@ class CustomCatTypeListItem extends StatelessWidget {
                   image: AssetImage(
                     image ?? 'assets/images/cat_test.jpeg',
                   ),
-                  fit: BoxFit.cover,
+                  fit: BoxFit.contain,
                 ),
                 borderRadius: BorderRadius.circular(15),
               ),
