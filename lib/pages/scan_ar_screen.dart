@@ -160,7 +160,7 @@ class _ScanARScreenState extends State<ScanARScreen> {
             break;
           case "kucing3":
             _addCat(augmentedImage, 'American Wirehair',
-                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/AmericanWirehair.glb",
+                "https://cdn.jsdelivr.net/gh/Rivaldi72/skripsi-ar-object/AmericanWirehair/AmericanWirehair.gltf",
                 scale: 0.005);
             break;
           case "kucing4":
